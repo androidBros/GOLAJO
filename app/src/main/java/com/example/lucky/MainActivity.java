@@ -5,14 +5,18 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    Button option_btn;
-    Button luck_btn;
+    ImageButton option_btn;
+
+    home home;
+    random_menu random_menu;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,14 +51,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        luck_btn = findViewById(R.id.luck_btn);
-        luck_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent luck_view = new Intent(getApplicationContext(), luck.class);
-                startActivity(luck_view);
-            }
-        });
+
+        home = (home) getSupportFragmentManager().findFragmentById(R.id.fragmenthome);
+        random_menu = new random_menu();
+    }
+
+    public void onFragmentChanged(int index){
+        if(index == 0){
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, home).commit();
+        }
+        else if(index == 1){
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, random_menu).commit();
+        }
     }
 
 

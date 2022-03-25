@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Lucky_Lucky">
         <activity
-            android:name=".luck"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
