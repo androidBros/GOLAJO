@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Lucky_Lucky</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu0">중국집 당첨!!</string>
+    <string name="menu1">떡볶이 당첨!!</string>
+    <string name="menu2">햄버거 당첨!!</string>
+    <string name="menu3">찜닭 당첨!!</string>
+    <string name="menu4">돈까스 당첨!!</string>
+    <string name="menu5">초밥 당첨!!</string>
+    <string name="menu6">치킨 당첨!!</string>
+    <string name="menu7">피자 당첨!!</string>
+    <string name="menu8">족발 당첨!!</string>
+    <string name="menu9">파스타 당첨!!</string>
+
 </resources>
