@@ -64,7 +64,7 @@ public class random_menu extends Fragment {
             @Override
             public void onClick(View view) {
                 MainActivity activity = (MainActivity) getActivity();
-                activity.startLocationService();
+                activity.startLocationService(); //차선호 ㅄ
 
 
 
