@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,9 @@ public class random_menu extends Fragment {
     int view_num;
     String menu = "";
     int resId;
+    String menu_res;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -50,6 +54,8 @@ public class random_menu extends Fragment {
                 menu = "menu"+str_view_num;
                 resId = getResources().getIdentifier(menu,"string", getActivity().getPackageName());
                 select_menu.setText(resId);
+                menu_res = getResources().getString(resId); //Integer.toString(resId).split(" ")[0];
+                menu_res = menu_res.split(" ")[0];
 
             }
         });
@@ -59,7 +65,7 @@ public class random_menu extends Fragment {
             public void onClick(View view) {
                 MainActivity activity = (MainActivity) getActivity();
                 activity.startLocationService();
-                activity.onFragmentChanged(2);
+
 
 
             }
