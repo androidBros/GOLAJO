@@ -1,5 +1,9 @@
 package com.example.lucky;
 
+
+import android.content.Context;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -23,6 +27,7 @@ public class random_menu extends Fragment {
         ViewGroup rootView= (ViewGroup) inflater.inflate(R.layout.fragment_random_menu, container, false);
         Button start = rootView.findViewById(R.id.start_btn);
         Button stop = rootView.findViewById(R.id.stop_btn);
+        Button search_store = rootView.findViewById(R.id.search_store);
         final ViewFlipper viewFlipper;
         TextView select_menu = rootView.findViewById(R.id.select_menu);
 
@@ -49,6 +54,16 @@ public class random_menu extends Fragment {
             }
         });
 
+        search_store.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity activity = (MainActivity) getActivity();
+                activity.startLocationService();
+                activity.onFragmentChanged(2);
+
+
+            }
+        });
         return rootView;
     }
 
