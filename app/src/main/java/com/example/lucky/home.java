@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+//
 public class home extends Fragment {
 
     @Override
@@ -17,7 +18,7 @@ public class home extends Fragment {
         // Inflate the layout for this fragment
         ViewGroup rootView= (ViewGroup) inflater.inflate(R.layout.fragment_home, container, false);
 
-        Button button = rootView.findViewById(R.id.button);
+        Button button = rootView.findViewById(R.id.button); // home -> random_menu 이동
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

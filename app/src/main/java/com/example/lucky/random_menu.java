@@ -32,20 +32,20 @@ public class random_menu extends Fragment {
         Button start = rootView.findViewById(R.id.start_btn);
         Button stop = rootView.findViewById(R.id.stop_btn);
         Button search_store = rootView.findViewById(R.id.search_store);
-        final ViewFlipper viewFlipper;
         TextView select_menu = rootView.findViewById(R.id.select_menu);
 
+        final ViewFlipper viewFlipper; // 음식 사진 전환
         viewFlipper = (ViewFlipper)rootView.findViewById(R.id.viewFlipper1);
         viewFlipper.setFlipInterval(100);
 
-        start.setOnClickListener(new View.OnClickListener() {
+        start.setOnClickListener(new View.OnClickListener() { // viewflipper 시작
             @Override
             public void onClick(View view) {
                 viewFlipper.startFlipping();
             }
         });
 
-        stop.setOnClickListener(new View.OnClickListener() {
+        stop.setOnClickListener(new View.OnClickListener() { // viewflipper 정지
             @Override
             public void onClick(View view) {
                 viewFlipper.stopFlipping();
@@ -60,17 +60,19 @@ public class random_menu extends Fragment {
             }
         });
 
+        // 선택한 음식 webview에서 검색
         search_store.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 MainActivity activity = (MainActivity) getActivity();
-                activity.startLocationService(); //차선호 ㅄ
-
-
+                activity.startLocationService();
 
             }
         });
+
+
         return rootView;
     }
+
 
 }

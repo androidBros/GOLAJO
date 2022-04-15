@@ -2,9 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/m1"
-        android:title="언어설정" />
+        android:title="@string/Language_settings">
+        <menu>
+            <item
+                android:id="@+id/english_sc"
+                android:title="@string/English" />
+            <item
+                android:id="@+id/korea_sc"
+                android:title="@string/korea" />
+        </menu>
+    </item>
     <item
         android:id="@+id/m2"
-        android:title="도움말"/>
+        android:title="@string/help" />
 </menu>
 
