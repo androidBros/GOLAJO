@@ -29,7 +29,9 @@ import com.yanzhenjie.permission.runtime.Permission;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import java.io.IOException;
 import java.util.List;
@@ -38,7 +40,7 @@ import java.util.Locale;
 //
 public class MainActivity extends AppCompatActivity {
     ImageButton option_btn;  // 설정 버튼
-    ImageButton back_btn; // 뒤로가기 버튼
+
 
     home home; // 프레그먼트
     random_menu random_menu; // 프레그먼트
@@ -48,12 +50,13 @@ public class MainActivity extends AppCompatActivity {
 
     Geocoder geocoder;
     String result_address;
+//
+//    String locale;
+//    SharedPreferences sharedPreferences;
+//    int locale_number;
+//
+//    Context context;
 
-    String locale;
-    SharedPreferences sharedPreferences;
-    int locale_number;
-
-    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,29 +66,9 @@ public class MainActivity extends AppCompatActivity {
         home = new home();
         random_menu = new random_menu();
         onFragmentChanged(0);
+
+
         geocoder = new Geocoder(this);
-
-        sharedPreferences = getSharedPreferences("shared",MODE_PRIVATE);
-        //버전 확인후 sharedpreferences에 locale키 값의 value값을 가져옵니다.
-        // 값이 없을 경우 기본언어 설정
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            locale = sharedPreferences.getString("locale",getResources().getConfiguration().getLocales().get(0).getLanguage());
-        }
-        else {
-            locale = sharedPreferences.getString("locale", Resources.getSystem().getConfiguration().locale.getLanguage());
-        }
-        //스피너 기본 선택값을 주기 위해서 해당 언어의 순서에 맞게 int값을 준비해줍니다.
-        switch (locale){
-            case "ko":{
-                locale_number = 0;
-                break;
-            }
-
-            case "en":{
-                locale_number = 1;
-                break;
-            }
-        }
 
 
 
@@ -107,11 +90,17 @@ public class MainActivity extends AppCompatActivity {
                             case R.id.m2:
                                 option_help();
                                 break;
+
                             case R.id.english_sc:
                                 Toast.makeText(getApplication(),"영어",Toast.LENGTH_SHORT).show();
+                                changeLocale(1);
+                                Refresh(1);
                                 break;
+
                             case R.id.korea_sc:
                                 Toast.makeText(getApplication(),"한국어",Toast.LENGTH_SHORT).show();
+                                changeLocale(2);
+                                Refresh(2);
                                 break;
                             default:
                                 break;
@@ -142,22 +131,41 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-//    // 언어 변경
-//    private void changeLocale(String localeLang){
-//        Locale locale = null;
-//
-//        switch (localeLang){
-//            case "ko":
-//                locale = new Locale("ko");
-//                break;
-//            case "en":
-//                locale = new Locale("en");
-//                break;
-//        }
-//        Configuration config = context.getResources().getConfiguration();
-//
-//
-//    }
+    // 언어 변경 us
+    private void changeLocale(int n){
+
+//        Locale locale = getResources().getConfiguration().locale;
+
+        if(n == 1) {
+            Locale en = Locale.US;
+            Configuration config = new Configuration();
+            config.locale = en;
+            getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+            home.button.setImageResource(R.drawable.select_menu_en);
+        }
+        else if(n == 2){
+            Locale kr = Locale.KOREA;
+            Configuration config = new Configuration();
+            config.locale = kr;
+            getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+            home.button.setImageResource(R.drawable.select_menu);
+
+        }
+
+    }
+
+    // 프래그먼트 새로고침
+    public void Refresh(int n){
+
+        finish();
+        overridePendingTransition(0,0);
+        Intent intent = getIntent();
+        startActivity(intent);
+        overridePendingTransition(0,0);
+
+    }
+
+
 
 
     // 설정 -> 도움말
@@ -189,10 +197,9 @@ public class MainActivity extends AppCompatActivity {
                 double latitude = location.getLatitude();
                 double longtitude = location.getLongitude();
             }
-
             GPSListener gpsListener = new GPSListener();
-            long minTime = 10000;
-            float minDistance = 0;
+            long minTime = 0;
+            float minDistance = 10000;
 
             manager.requestLocationUpdates(
                     LocationManager.GPS_PROVIDER,

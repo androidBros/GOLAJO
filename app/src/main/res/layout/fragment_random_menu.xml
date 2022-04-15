@@ -97,7 +97,7 @@
             android:id="@+id/select_menu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="과연~~~???"
+            android:text="@string/String1"
             android:textSize="30sp" />
 
         <LinearLayout
@@ -105,24 +105,29 @@
             android:layout_height="0dp"
             android:layout_weight="1">
 
-            <Button
+            <android.widget.Button
                 android:id="@+id/start_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="start" />
+                android:background="@drawable/start_btn"
+                android:text="@string/start_btn"
+                android:textColor="#3E1B1B" />
 
-            <Button
+            <android.widget.Button
                 android:id="@+id/stop_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="stop" />
+                android:background="@drawable/start_btn"
+                android:text="@string/stop_btn"
+                android:enabled="false"/>
 
-            <Button
+            <android.widget.Button
                 android:id="@+id/search_store"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/start_btn"
                 android:layout_weight="1"
-                android:text="음식점 찾기" />
+                android:text="@string/search_store_btn"/>
         </LinearLayout>
 
     </LinearLayout>

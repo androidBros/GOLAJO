@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 public class random_menu extends Fragment {
@@ -42,7 +43,11 @@ public class random_menu extends Fragment {
             @Override
             public void onClick(View view) {
                 viewFlipper.startFlipping();
+                menu_res = null;
+                stop.setEnabled(true);
+                start.setEnabled(false);
             }
+
         });
 
         stop.setOnClickListener(new View.OnClickListener() { // viewflipper 정지
@@ -56,6 +61,8 @@ public class random_menu extends Fragment {
                 select_menu.setText(resId);
                 menu_res = getResources().getString(resId); //Integer.toString(resId).split(" ")[0];
                 menu_res = menu_res.split(" ")[0];
+                start.setEnabled(true);
+                stop.setEnabled(false);
 
             }
         });
@@ -65,8 +72,11 @@ public class random_menu extends Fragment {
             @Override
             public void onClick(View view) {
                 MainActivity activity = (MainActivity) getActivity();
-                activity.startLocationService();
-
+                if (menu_res != null) {
+                    activity.startLocationService();
+                }else{
+                    Toast.makeText(activity,"메뉴를 골라주세용",Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
