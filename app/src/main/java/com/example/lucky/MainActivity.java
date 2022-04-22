@@ -18,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
@@ -50,12 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
     Geocoder geocoder;
     String result_address;
-//
-//    String locale;
-//    SharedPreferences sharedPreferences;
-//    int locale_number;
-//
-//    Context context;
+
 
 
     @Override
@@ -69,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         geocoder = new Geocoder(this);
-
 
 
         // 설정
@@ -129,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
                 .start();
 
 
+
     }
 
     // 언어 변경 us
@@ -167,7 +163,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
     // 설정 -> 도움말
     public void option_help(){
         Intent intent = new Intent(this, option_help.class);
@@ -190,7 +185,7 @@ public class MainActivity extends AppCompatActivity {
     // 위치 검색  startLocationService()
     public void startLocationService(){
         LocationManager manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        Bundle bundle = new Bundle();
+
         try{
             Location location = manager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
             if (location != null){
@@ -199,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
             }
             GPSListener gpsListener = new GPSListener();
             long minTime = 0;
-            float minDistance = 10000;
+            float minDistance = 1000;
 
             manager.requestLocationUpdates(
                     LocationManager.GPS_PROVIDER,
@@ -251,21 +246,18 @@ public class MainActivity extends AppCompatActivity {
                     System.out.println("cut[" + i + "] : " + cut[i]);
                 }
 
-                result_address = "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query="+cut[1]+"+"+cut[2]+"+"+cut[3]+"+"+random_menu.menu_res;
+                result_address = "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query="+cut[1]+"+"+cut[2]+"+"+cut[3]+"+";
 
-                urlOpen(result_address);
+                Bundle bundle = new Bundle();
+                bundle.putString("address",result_address);
+                random_menu.setArguments(bundle);
+
 
             }
 
         }
     }
 
-    // WebView 띄우기
-    public void urlOpen(String url){
-        Log.d("menu", url);
-        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-        startActivity(myIntent);
 
-    }
 
 }

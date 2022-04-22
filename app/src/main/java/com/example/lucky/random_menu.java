@@ -2,8 +2,10 @@ package com.example.lucky;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.location.Location;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -23,7 +25,7 @@ public class random_menu extends Fragment {
     String menu = "";
     int resId;
     String menu_res;
-
+    String url_string=null;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,10 +44,14 @@ public class random_menu extends Fragment {
         start.setOnClickListener(new View.OnClickListener() { // viewflipper 시작
             @Override
             public void onClick(View view) {
+                Log.d("random_menu","음식 고르기 시작");
                 viewFlipper.startFlipping();
                 menu_res = null;
                 stop.setEnabled(true);
                 start.setEnabled(false);
+                MainActivity activity = (MainActivity) getActivity();
+                activity.startLocationService();
+                Log.d("mainActivity","위치서비스 메소드 실행 - startLocationService() ");
             }
 
         });
@@ -53,6 +59,7 @@ public class random_menu extends Fragment {
         stop.setOnClickListener(new View.OnClickListener() { // viewflipper 정지
             @Override
             public void onClick(View view) {
+                Log.d("random_menu","음식 고르기 정지");
                 viewFlipper.stopFlipping();
                 view_num = viewFlipper.getDisplayedChild();
                 String str_view_num = Integer.toString(view_num);
@@ -60,9 +67,17 @@ public class random_menu extends Fragment {
                 resId = getResources().getIdentifier(menu,"string", getActivity().getPackageName());
                 select_menu.setText(resId);
                 menu_res = getResources().getString(resId); //Integer.toString(resId).split(" ")[0];
-                menu_res = menu_res.split(" ")[0];
+                menu_res = menu_res.split(" ")[0]; // 선택한 음식 이름
                 start.setEnabled(true);
                 stop.setEnabled(false);
+
+                Bundle bundle = getArguments();
+                if(bundle != null){
+                    url_string = bundle.getString("address");
+                    url_string = url_string +menu_res;
+                    Log.d("random_menu",url_string);
+                }
+
 
             }
         });
@@ -71,12 +86,25 @@ public class random_menu extends Fragment {
         search_store.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                Log.d("random_menu","음식점 찾기 버튼 클릭");
+
                 MainActivity activity = (MainActivity) getActivity();
-                if (menu_res != null) {
-                    activity.startLocationService();
-                }else{
+                if (menu_res == null) {
                     Toast.makeText(activity,"메뉴를 골라주세용",Toast.LENGTH_SHORT).show();
                 }
+
+
+                if(url_string!=null){
+                    Log.d("random_menu","음식점 엑티비티 ON");
+                    Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url_string));
+                    startActivity(myIntent);
+                }
+                else{
+                    Log.d("random_menu","음식점 엑티비티 faild");
+                }
+
+
             }
         });
 
