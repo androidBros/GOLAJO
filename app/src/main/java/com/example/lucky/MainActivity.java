@@ -31,6 +31,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentContainerView;
 
 
 import java.io.IOException;
@@ -163,6 +165,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+//    public void onBackPressed(){
+//        if(getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView) == home){
+//            finish();
+//        }
+//        super.onBackPressed();
+//    }
 
     //프레그먼트 변환
     public void onFragmentChanged(int index){
