@@ -165,12 +165,13 @@ public class MainActivity extends AppCompatActivity { // 차선호
         startActivity(intent);
     }
 
-//    public void onBackPressed(){
-//        if(getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView) == home){
-//            finish();
-//        }
-//        super.onBackPressed();
-//    }
+    public void onBackPressed(){
+        if(getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView) == home){
+            finish();
+        }else{
+            super.onBackPressed();
+        }
+    }
 
     //프레그먼트 변환
     public void onFragmentChanged(int index){
