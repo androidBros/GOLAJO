@@ -40,7 +40,7 @@ import java.util.List;
 import java.util.Locale;
 
 //
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity { // 차선호
     ImageButton option_btn;  // 설정 버튼
 
 
