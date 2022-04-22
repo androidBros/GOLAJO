@@ -1,13 +1,11 @@
 package com.example.lucky;
 
 import android.app.Activity;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class option_help extends Activity {

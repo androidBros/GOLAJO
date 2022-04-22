@@ -21,4 +21,10 @@
     <string name="Language_settings">Language</string>
     <string name="String1">drumroll</string>
     <string name="String2">selcet</string>
+    <string name="menu10">Cold noodles</string>
+    <string name="menu11">marathon</string>
+    <string name="menu12">pork belly</string>
+    <string name="menu13">Rice soup</string>
+    <string name="menu14">Korean cuisine</string>
+    <string name="menu15">Kalguksu</string>
 </resources>

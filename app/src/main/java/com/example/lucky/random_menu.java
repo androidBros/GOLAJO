@@ -1,10 +1,7 @@
 package com.example.lucky;
 
 
-import android.content.Context;
 import android.content.Intent;
-import android.location.Location;
-import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -39,7 +36,7 @@ public class random_menu extends Fragment {
 
         final ViewFlipper viewFlipper; // 음식 사진 전환
         viewFlipper = (ViewFlipper)rootView.findViewById(R.id.viewFlipper1);
-        viewFlipper.setFlipInterval(100);
+        viewFlipper.setFlipInterval(50);
 
         start.setOnClickListener(new View.OnClickListener() { // viewflipper 시작
             @Override
@@ -49,8 +46,8 @@ public class random_menu extends Fragment {
                 menu_res = null;
                 stop.setEnabled(true);
                 start.setEnabled(false);
-                MainActivity activity = (MainActivity) getActivity();
-                activity.startLocationService();
+
+
                 Log.d("mainActivity","위치서비스 메소드 실행 - startLocationService() ");
             }
 

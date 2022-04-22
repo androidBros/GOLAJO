@@ -6,7 +6,9 @@
     android:layout_height="wrap_content"
     android:background="#EEE6C4"
     android:backgroundTint="#EEE6C4"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingBottom="20dp"
+    android:paddingTop="10dp">
 
     <!-- 타이틀바 -->
 
@@ -18,9 +20,10 @@
             android:id="@+id/title_help"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginLeft="80dp"
+            android:layout_marginLeft="98dp"
             android:layout_marginRight="80dp"
-            android:text="help"
+            android:layout_marginTop="8dp"
+            android:text="Help"
             android:textColor="#000000"
             android:textSize="30sp" />
 
@@ -40,7 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="10dp"
-        android:text=" 이 어플리케이션은 식사 메뉴를 고르기 힘드신 분들을 위해 중국집, 떡볶이, 햄버거, 찜닭, 돈까스, 초밥, 치킨, 피자, 족발, 파스타 10가지 음식 중 랜덤으로 한 가지를 선택하여 주변의 맛집을 검색해드립니다. \n 불편하신 점이나 원하는 음식이 있을 경우 후기에 남겨주시면 참고하겠습니다. 감사합니다.  "
+        android:text=" 이 어플리케이션은 식사 메뉴를 고르기 힘드신 분들을 위해 중국집, 떡볶이, 햄버거, 찜닭, 돈까스, 초밥, 치킨 등 15가지 음식 중 랜덤으로 한 가지를 선택하여 주변의 맛집을 검색해드립니다. \n 불편하신 점이나 원하는 음식이 있을 경우 후기에 남겨주시면 참고하겠습니다. 감사합니다.  "
         android:textColor="#000000"
         android:textSize="18sp" />
 
