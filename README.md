@@ -43,6 +43,8 @@
 <br>음식 선택 화면<br>
 <img src="https://user-images.githubusercontent.com/101864380/168630183-062793b0-73ce-4bb1-8130-892f794014e1.png" width="250" height="500"/>
 <img src="https://user-images.githubusercontent.com/101864380/168630924-98972cc9-9494-48f4-a80c-21f0ea535e98.gif" width="250" height="500"/>
+<img src="https://user-images.githubusercontent.com/101864380/168631600-78798f4d-e46a-4452-8839-e69c671970b9.PNG" width="500" height="520"/>
+
 
                                                                                                                                         
                                                                                                                                         
