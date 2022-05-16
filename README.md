@@ -37,6 +37,7 @@
 <br>
 
 ### 구동화면
+<img src="https://user-images.githubusercontent.com/101864380/168626941-d3362f1b-41cf-4c82-8f75-59f29c4dbb16.png" width="200 height="400"/>
 
 
 
