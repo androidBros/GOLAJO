@@ -37,7 +37,7 @@
 <br>
 
 ### 구동화면
- 홈 화면           설정           언어설정          도움말
+ 홈 화면          설정          언어설정         도움말
 <br>
 ![화면1](https://user-images.githubusercontent.com/101864380/168629097-8ac69ec0-ca3e-4f4c-85f1-a634c790c633.png)
 
