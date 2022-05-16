@@ -41,8 +41,8 @@
 ![화면1](https://user-images.githubusercontent.com/101864380/168629097-8ac69ec0-ca3e-4f4c-85f1-a634c790c633.png)
 
 <br>음식 선택 화면<br>
-![화면2](https://user-images.githubusercontent.com/101864380/168630183-062793b0-73ce-4bb1-8130-892f794014e1.png)
-![화면2](https://user-images.githubusercontent.com/101864380/168630183-062793b0-73ce-4bb1-8130-892f794014e1.png)
+<img src="https://user-images.githubusercontent.com/101864380/168630183-062793b0-73ce-4bb1-8130-892f794014e1.png" width="250" height="500"/>
+<img src="https://user-images.githubusercontent.com/101864380/168630924-98972cc9-9494-48f4-a80c-21f0ea535e98.gif" width="250" height="500"/>
 
                                                                                                                                         
                                                                                                                                         
