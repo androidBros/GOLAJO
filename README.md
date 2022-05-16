@@ -41,9 +41,10 @@
 ![화면1](https://user-images.githubusercontent.com/101864380/168629097-8ac69ec0-ca3e-4f4c-85f1-a634c790c633.png)
 
 <br>음식 선택 화면<br>
-<img src="https://user-images.githubusercontent.com/101864380/168630183-062793b0-73ce-4bb1-8130-892f794014e1.png" width="250" height="500"/>
-<img src="https://user-images.githubusercontent.com/101864380/168630924-98972cc9-9494-48f4-a80c-21f0ea535e98.gif" width="250" height="500"/>
-<img src="https://user-images.githubusercontent.com/101864380/168632129-576fa13e-4e92-4f30-be6c-1a84a54901d7.PNG" width="250" height="500"/>
+<img src="https://user-images.githubusercontent.com/101864380/168630183-062793b0-73ce-4bb1-8130-892f794014e1.png" width="245" height="500"/>
+<img src="https://user-images.githubusercontent.com/101864380/168630924-98972cc9-9494-48f4-a80c-21f0ea535e98.gif" width="245" height="500"/>
+<img src="https://user-images.githubusercontent.com/101864380/168632129-576fa13e-4e92-4f30-be6c-1a84a54901d7.PNG" width="245" height="500"/>
+<img src="https://user-images.githubusercontent.com/101864380/168632541-57748383-e125-4b86-a0f1-bee7f87b1f04.PNG" width="245" height="500"/>
 
 
                                                                                                                                         
