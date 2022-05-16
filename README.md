@@ -38,9 +38,10 @@
 
 ### 구동화면
 홈 화면<br>
-<img src="https://user-images.githubusercontent.com/101864380/168626941-d3362f1b-41cf-4c82-8f75-59f29c4dbb16.png" width="200" height="400"/>
+![화면1](https://user-images.githubusercontent.com/101864380/168629097-8ac69ec0-ca3e-4f4c-85f1-a634c790c633.png)
 
 <br>음식 선택 화면<br>
+![화면2](https://user-images.githubusercontent.com/101864380/168630183-062793b0-73ce-4bb1-8130-892f794014e1.png)
 ![화면2](https://user-images.githubusercontent.com/101864380/168630183-062793b0-73ce-4bb1-8130-892f794014e1.png)
 
                                                                                                                                         
