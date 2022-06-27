@@ -1,4 +1,4 @@
-package com.example.lucky;
+package com.chadong.lucky;
 
 
 import android.content.DialogInterface;
@@ -23,16 +23,13 @@ import android.widget.PopupMenu;
 import android.widget.Toast;
 import android.app.AlertDialog;
 
-import com.yanzhenjie.permission.Action;
-import com.yanzhenjie.permission.AndPermission;
+import com.chadong.lucky.R;
 import com.yanzhenjie.permission.runtime.Permission;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentContainerView;
 
 
 import java.io.IOException;

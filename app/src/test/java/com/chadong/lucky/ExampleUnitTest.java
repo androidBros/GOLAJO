@@ -1,4 +1,4 @@
-package com.example.lucky;
+package com.chadong.lucky;
 
 import org.junit.Test;
 
