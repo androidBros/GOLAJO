@@ -39,8 +39,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
-//
-public class MainActivity extends AppCompatActivity { // 차선호
+
+public class MainActivity extends AppCompatActivity {
     ImageButton option_btn;  // 설정 버튼
 
 
@@ -211,7 +211,6 @@ public class MainActivity extends AppCompatActivity { // 차선호
                 Bundle bundle = new Bundle();
                 bundle.putString("address",result_address);
                 random_menu.setArguments(bundle);
-
 
             }
 
